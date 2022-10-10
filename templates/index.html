@@ -16,6 +16,12 @@
 	<script src="/static/js/popper.min.js"></script>
 	<script src="/static/js/bootstrap.min.js"></script>
 	<script src="/static/js/loader.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="/static/css/index.css">
 </head>
 
 <body>
@@ -25,40 +31,40 @@
 	<div class="complete">
 		<div id="main">
 			<div class="container mx-auto">
-				<nav class="container mx-auto py-6 mx-12">
+				<nav class="container mx-auto py-2 mx-12">
 					<div class="flex flex-row">
 						<a href="https://ecell.nitrr.ac.in/">
 							<img src="static/images/1.png" class="h-24 w-24" alt="logo" /></a>
 						<div class="flex flex-row flex-1 gap-8 justify-end my-auto">
 							{% if user.is_authenticated %}
 							<a href="/sellbuy/dashboard/"
-								class="font-roboto font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
+								class="font-poppins font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
 								<button class="my-auto">
 									DASHBOARD
 								</button>
 							</a>
 							<a href="/auth/logout/"
-								class="font-roboto font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
+								class="font-poppins font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
 								<button class="my-auto">
 									LOGOUT
 								</button>
 							</a>
 							{% else %}
 							<a href="/auth/login/"
-								class="font-roboto font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
+								class="font-poppins font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
 								<button class="my-auto">
 									LOGIN
 								</button>
 							</a>
 
 							<a href="/auth/register/"
-								class="font-roboto font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
+								class="font-poppins font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
 								<button class="my-auto">
 									REGISTER
 								</button>
 							</a>
 							{% endif %}
-							<a class="font-roboto font-semibold border-2 color-border text-sm tracking-morewider mx-4 px-6 py-3 hover:border-white hover:text-white hover:bg-custom"
+							<a class="font-poppins font-semibold border-2 color-border text-sm tracking-morewider mx-4 px-6 py-3 hover:border-white hover:text-white hover:bg-custom"
 								href="/developers/">
 								<button class="my-auto">
 									DEVELOPERS
@@ -67,135 +73,251 @@
 						</div>
 					</div>
 				</nav>
-				<div id="logo">
-					<img src="/static/images/wslogo.png" alt="Logo not available!" id="logows">
-					<div class=" display-4 mt-3" id="head"> WALL STREET </div>
-				</div>
+			</div>
 
-				<div class="grid grid-cols-2">
+			<div class="bg-gray-100">
+				<div class="container mx-auto  my-auto">
+					<div class="grid grid-cols-2 mx-12">
+						<div class="grid py-24 my-auto">
+							<div class="flex flex-col">
+								<div>
+									<span class="wallstreet_subheading">A Virtual Stock Market Game</span>
+								</div>
+								<div class="wallstreet_heading_div">
+									<span class="wallstreet_heading">Invest Your Money With Us and <span
+											style="color: #2196F3;"> Get Amazing
+											Profit</span></span>
+								</div>
+								<div class="wallstreet_paragraph_div">
+									<span class="wallstreet_paragraph">
+										Maximize your investment in the capital market world with the
+										convenience and various features provided by Tradiant.
+									</span>
+								</div>
+								<div class="flex flex-row my-6 gap-4">
+									<div>
+										<button class="wallstreet_button-1 py-4 px-12"><span
+												class="wallstreet_button-1_font">Register</span></button>
+									</div>
+									<div>
+										<button class="wallstreet_button-2 py-4 px-12"><span
+												class="wallstreet_button-2_font">Login</span></button>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="grid py-24 my-auto mx-auto">
+							<div class="wallstreet_heading_image">
+								<img src="/static/images/undraw_investing_re_bov7.svg">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container mx-auto my-auto py-12">
+				<div class="flex flex-col gap-4">
 					<div>
-						<div class="flex-container" id="a">
-							<div class="text-center">
-								<p style="font-weight:bold;" id="text1"> Already a user? </p>
-								<form action="/auth/login/">
-									<input type="submit" class="btn btn-lg text-center" id="btn" value="Login">
-								</form>
-							</div>
-							<div class="text-center">
-								<p style="font-weight:bold;" id="text1"> Get registered </p>
-								<form action="/auth/register/">
-									<input type="submit" class="btn btn-lg text-center" id="btn" value="Register">
-								</form>
+						<p class="wallstreet_part2_subheading">
+							Why play the game?
+						</p>
+					</div>
+					<div>
+						<p class="wallstreet_part2_heading">Specially designed for stock market</p>
+					</div>
+					<div class="grid grid-cols-2 py-8">
+						<div class="wallstreet_heading_image mx-auto">
+							<img class="wallstreet_heading_image" src="/static/images/undraw_presentation_re_sxof.svg">
+						</div>
+						<div class="mx-auto my-auto">
+							<div class="flex flex-col">
+								<div>
+									<p class="wallstreet_part2_subtitle">INTRODUCTION</p>
+								</div>
+								<div>
+									<p class="wallstreet_part2_title">What is WallStreet'22 exactly?</p>
+								</div>
+								<div>
+									<p class="wallstreet_part2_paragraph">
+										Wallstreet is a virtual game that will give the students an opportunity
+										to see the transgressions
+										of the market first hand. While creating a virtual stock market and providing
+										them with
+										virtual stocks, this game
+										in turn allows students to learn to build up from the least and how to become a
+										giant in
+										the world of changing trends.This
+										will be a daily event with a daily winner. Person on the top of the share market
+										with
+										the largest number of shares
+										in value goes home as the winner.
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-
-
-				<div>
-					<p class="text-center" id="corner"> A VIRTUAL STOCK<br> MARKET GAME </p>
+					<div class="grid grid-cols-2 py-8">
+						<div class="mx-auto my-auto">
+							<div class="flex flex-col">
+								<div>
+									<p class="wallstreet_part2_subtitle">SCOPE OF WORK</p>
+								</div>
+								<div>
+									<p class="wallstreet_part2_title">Description of the game (Scope)</p>
+								</div>
+								<div>
+									<p class="wallstreet_part2_paragraph">
+										The participants will be provided with certain initial amount of money
+										which they will be using
+										to buy virtual stocks. The stock market deatils for each virtual company will be
+										generated and modified by the servers
+										, details of which will be shown through a projector. Participants can sell the
+										stocks
+										they bought accordingly with
+										the current prices of the stock. In this way a participant's profit value will
+										change.
+										At the end of the day the participant
+										with maximum profit will be declared the winner.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="wallstreet_heading_image mx-auto"><img class="wallstreet_heading_image"
+								src="/static/images/undraw_accept_terms_re_lj38.svg"></div>
+					</div>
+					<div class="grid grid-cols-2 py-8">
+						<div class="wallstreet_heading_image mx-auto"><img class="wallstreet_heading_image"
+								src="/static/images/undraw_certificate_re_yadi.svg"></div>
+						<div class="mx-auto my-auto">
+							<div class="flex flex-col">
+								<div>
+									<p class="wallstreet_part2_subtitle">NEED</p>
+								</div>
+								<div>
+									<p class="wallstreet_part2_title">Awareness and Skills</p>
+								</div>
+								<div>
+									<p class="wallstreet_part2_paragraph">
+										Helps develop the awareness of the trends of the market. Develop the
+										descision making skills in
+										students. Develop resource management skills.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid grid-cols-2 py-8">
+						<div class="mx-auto my-auto">
+							<div class="flex flex-col">
+								<div>
+									<p class="wallstreet_part2_subtitle">GOALS</p>
+								</div>
+								<div>
+									<p class="wallstreet_part2_title">Targets achieved</p>
+								</div>
+								<div>
+									<p class="wallstreet_part2_paragraph">
+										To help students become aware of the market strategies. Develop self
+										confidence among students
+										among students while making big decisions. Start the habit of being aware of
+										every
+										development possibility among students.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="wallstreet_heading_image mx-auto"><img class="wallstreet_heading_image"
+								src="/static/images/undraw_goals_re_lu76.svg"></div>
+					</div>
 				</div>
 			</div>
-			<br>
-			<br>
-			<div class="slideshow">
-				<div class="slides slide" id="one">
-					<div id="content">
-						<div id="heading">
-							<div class="display-4 text-center" id="heada"> INTRODUCTION </div>
-						</div>
-						<div class="flex-container" id="b">
-							<div id="number">
-								<div class="display-4 text-center"><br><br> 1 </div>
-							</div>
-							<div id="text"> <br> Wallstreet is a virtual game that will give the students an opportunity
-								to see the transgressions
-								of the market first hand. While creating a virtual stock market and providing them with
-								virtual stocks, this game
-								in turn allows students to learn to build up from the least and how to become a giant in
-								the world of changing trends.<br><br>This
-								will be a daily event with a daily winner. Person on the top of the share market with
-								the largest number of shares
-								in value goes home as the winner.</div>
+		</div>
+		<div class="bg-gray-100 py-12 px-12">
+			<div class="container mx-auto px-12">
+				<div class="grid grid-cols-3">
+					<div class="my-auto">
+						<img class="footer_logo" src="/static/images/ecelllogo1.png" />
+					</div>
+					<div class="mx-auto">
+						<div class="flex flex-col mx-auto">
+							<p class="text-lg font-poppins">Sitemap</p>
+							<p class="
+						text-sm
+						leading-loose
+						font-medium
+						tracking-wide
+					
+						font-poppins 
+					  ">
+								Home
+							</p>
+							<p class="
+						text-sm
+						leading-loose
+						font-medium
+						tracking-wide
+					
+						font-poppins 
+					  ">
+								Visit
+							</p>
+							<p class="
+						text-sm
+						leading-loose
+						font-medium
+						tracking-wide
+					
+						font-poppins 
+					  ">
+								Exhibitions
+							</p>
+							<p class="
+						text-sm
+						leading-loose
+						font-medium
+						tracking-wide
+					
+						font-poppins 
+					  ">
+								Programs & Events
+							</p>
+							<p class="
+						text-sm
+						leading-loose
+						font-medium
+						tracking-wide
+					
+						font-poppins 
+					  ">
+								Store
+							</p>
+							<p class="
+						text-sm
+						leading-loose
+						font-medium
+						tracking-wide
+					
+						font-poppins 
+					  ">
+								Membership
+							</p>
 						</div>
 					</div>
-				</div>
-
-				<div class="slides slide">
-					<div id="content">
-						<div id="heading">
-							<div class="display-4 text-center" id="heada"> SCOPE OF WORK </div>
-						</div>
-						<div class="flex-container" id="b">
-							<div id="number">
-								<div class="display-4 text-center"><br><br> 2 </div>
-							</div>
-							<div id="text"><br> The participants will be provided with certain initial amount of money
-								which they will be using
-								to buy virtual stocks. The stock market deatils for each virtual company will be
-								generated and modified by the servers
-								, details of which will be shown through a projector. Participants can sell the stocks
-								they bought accordingly with
-								the current prices of the stock. In this way a participant's profit value will change.
-								At the end of the day the participant
-								with maximum profit will be declared the winner. </div>
-						</div>
-					</div>
-				</div>
-
-				<div class="slides slide">
-					<div id="content">
-						<div id="heading">
-							<div class="display-4 text-center" id="heada"> NEED </div>
-						</div>
-						<div class="flex-container" id="b">
-							<div id="number">
-								<div class="display-4 text-center"><br><br> 3 </div>
-							</div>
-							<div id="text"> <br> Helps develop the awareness of the trends of the market. Develop the
-								descision making skills in
-								students. Develop resource management skills. </div>
-						</div>
-					</div>
-				</div>
-
-				<div class="slides slide">
-					<div id="content">
-						<div id="heading">
-							<div class="display-4 text-center" id="heada"> GOALS </div>
-						</div>
-						<div class="flex-container" id="b">
-							<div id="number">
-								<div class="display-4 text-center"><br><br> 4 </div>
-							</div>
-							<div id="text"> <br> To help students become aware of the market strategies. Develop self
-								confidence among students
-								among students while making big decisions. Start the habit of being aware of every
-								development possibility among students.
-							</div>
+					<div class="mx-auto">
+						<div class="flex flex-col mx-auto">
+							<p class="text-lg font-poppins">Connect</p>
+							<p class="text-sm font-gray">test</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-		<br>
-		<br>
-		<div class="footer text-center">
-			<div id="info" class="text-center mt-2">
-				<p id="clg"> ECELL NIT RAIPUR</p>
-				<p> FOLLOW US ON SOCIAL MEDIA! <br>
-					<a href="https://www.facebook.com/ecellnitrr/" class="fa fa-facebook"></a>
-					<a href="https://twitter.com/ecellnitrr" class="fa fa-twitter"></a>
-					<a href="https://www.linkedin.com/company/entrepreneurship-cell-nit-raipur/"
-						class="fa fa-linkedin"></a>
-					<a href="https://www.instagram.com/ecell.nitraipur/" class="fa fa-instagram"></a><br> &copy All
-					rights reserved
-			</div>
+		<div class="bg-gray-100 mx-auto">
+			<p class=" font-poppins text-sm py-8 font-bold text-center">
+				© 2022 E-Cell NIT Raipur . All rights reserved.
+			</p>
 		</div>
+	</div>
 	</div>
 
 </body>

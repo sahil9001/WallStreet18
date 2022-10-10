@@ -1,0 +1,171 @@
+.wallstreet_subheading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: #2196F3;
+
+}
+
+.wallstreet_heading_div {
+    max-width: 661px;
+}
+
+.wallstreet_heading_image {
+    max-width: 661px;
+    max-height: 439px;
+}
+
+.wallstreet_heading {
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    color: #1D242A;
+}
+
+.wallstreet_paragraph_div {
+    max-width: 494px;
+    max-height: 48px;
+
+}
+
+.wallstreet_paragraph {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #5C7184;
+}
+
+.wallstreet_button-1_font {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+
+    /* Primary/0 */
+
+    color: #FAFDFF;
+
+}
+
+.wallstreet_button-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2196F3;
+    border-radius: 8px;
+}
+
+.wallstreet_button-2_font {
+    /* Button */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+
+    /* Primary/500 */
+
+    color: #2196F3;
+
+}
+
+.wallstreet_button-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.font-poppins {
+    font-family: 'Poppins';
+}
+
+.wallstreet_part2_subheading {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    /* identical to box height, or 133% */
+
+    text-align: center;
+
+    /* Primary/500 */
+
+    color: #2196F3;
+}
+
+.wallstreet_part2_heading {
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 64px;
+    text-align: center;
+    color: #1D242A;
+
+}
+
+.wallstreet_part2_subtitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+    text-transform: uppercase;
+    /* Primary/500 */
+    color: #2196F3;
+}
+.wallstreet_part2_title {
+    /* Heading/3 */
+    max-width: 579px;
+
+font-family: 'Epilogue';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 64px;
+/* or 160% */
+
+
+/* Gray/900 */
+
+color: #1D242A;
+}
+.wallstreet_part2_paragraph {
+    max-width: 512px;
+
+/* Body/M */
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* or 150% */
+
+
+/* Gray/600 */
+
+color: #5C7184;
+
+}
+
+.footer_logo {
+    max-width: 300px;
+}
