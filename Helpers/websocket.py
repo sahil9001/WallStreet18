@@ -1,5 +1,5 @@
 import os, sys, schedule, time, random, json
-sys.path.append('/home/shreyansh/DjangoProjects/WallStreet18/')
+sys.path.append('/home/gigawhiz/Desktop/WallStreet18/')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "WallStreet18.settings")
 import django
 django.setup()
