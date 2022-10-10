@@ -38,37 +38,36 @@
 						<div class="flex flex-row flex-1 gap-8 justify-end my-auto">
 							{% if user.is_authenticated %}
 							<a href="/sellbuy/dashboard/"
-								class="font-poppins font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
+								class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
 								<button class="my-auto">
-									DASHBOARD
+									<span class="wallstreet_button-1_font" style="color:black">Dashboard</span>
 								</button>
 							</a>
 							<a href="/auth/logout/"
-								class="font-poppins font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
+								class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
 								<button class="my-auto">
-									LOGOUT
+									<span class="wallstreet_button-1_font" style="color:black">Logout</span>
 								</button>
 							</a>
 							{% else %}
 							<a href="/auth/login/"
-								class="font-poppins font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
+								class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
 								<button class="my-auto">
-									LOGIN
+									<span class="wallstreet_button-1_font" style="color:black">Login</span>
 								</button>
 							</a>
 
 							<a href="/auth/register/"
-								class="font-poppins font-semibold color-text text-sm tracking-morewider px-4 py-2 my-auto">
+								class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
 								<button class="my-auto">
-									REGISTER
+									<span class="wallstreet_button-1_font" style="color:black">Register</span>
 								</button>
 							</a>
 							{% endif %}
-							<a class="font-poppins font-semibold border-2 color-border text-sm tracking-morewider mx-4 px-6 py-3 hover:border-white hover:text-white hover:bg-custom"
+							<a class="wallstreet_button-1 py-4 px-8"
 								href="/developers/">
-								<button class="my-auto">
-									DEVELOPERS
-								</button>
+								<span
+									class="wallstreet_button-1_font">Developers</span></button>
 							</a>
 						</div>
 					</div>
