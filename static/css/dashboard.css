@@ -3,6 +3,7 @@ body,html {
   height: 100vh;
   overflow-x: hidden;
 }
+
 .navbar-nav {
   margin-left: auto;
   font-size: 24px;
@@ -65,44 +66,28 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-#buy, #sell {
-  border-radius: 20px;
-  width: 80px;
-  color: #1E1D54;
-  font-weight: bold;
-  font-size: 15px;
-  justify-content: center;
-}
-#sharename, #sharequantity {
-  background-color:  #D8D8D8;
-  border-radius: 15px;
-  width: 85%;
-  margin-left: 6%;
-  overflow-x: hidden;
-  position: relative;
-}
 
 .right {
   width: 75%;
 }
 .table {
   background-color: white;
-  margin-top: 2.5%;
-  margin-left: 3%;
+  width: 100%;
+    border-radius: 20px;
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.08));
 }
 #head {
   color: #ff8f00;
 }
 thead{
-  background-color: #1E1D54;
-  color: #ff8f00;
+
 }
 #graph {
   background-color: white;
-  margin-top: 1%;
-  margin-left: 3%;
   width: 100%;
-  height: 54%;
+  border-radius: 20px;
+  filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.08));
+
   }
 
 canvas {

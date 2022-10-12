@@ -7,20 +7,26 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Gothic+A1:600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> -->
-    <link rel="icon" href="/static/images/logo.png">
-    <title>Dashboard | WallStreet '18</title>
+    <link rel="icon" href="/static/images/wallstreet-logo.jpeg">
+    <title>Dashboard | WallStreet '22</title>
     <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/dashboard.css">
-    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/dashboard1.css">
     <!-- <link rel="stylesheet" href="/static/css/toastify.min.css"> -->
     <!-- <link rel="stylesheet" href="/static/css/materialize.min.css"> -->
     <!-- <script src="dashboard.js"></script> -->
     <script src="/static/js/plotly.min.js"></script>
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/jquery.basic.toast.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/js/loader.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/index.css">
 </head>
 
 <body>
@@ -52,82 +58,111 @@
     </script>
     <div id="bg"></div>
     <div id="loader"></div>
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <!-- Lincomks -->
-        <a class="navbar-brand" style="color:#ff8f00;" id="wallstreet" href="/"><img src="/static/images/wslogo.png" alt="Logo not available!"
-                id="logows">WallStreet</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link ml-2" style="color:#1E1D54" href="/auth/logout/">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!--Content-->
-    <div id="shade">
-        <div class="flex-container">
-            <div class="left">
-                <div class="box1">
-                    <h1 class="ml-3"><B> Welcome<br> {{ name }} </B></h1>
-                </div>
-                <div class="box2">
-                    <h3 id="caption"> Money </h3>
-                    <h3 id="money"></h3>
-                </div>
-                <div class="box3">
-                    <h3 id="caption"> Stocks </h3>
-                    <div class="form-group">
-                        <label for="sel1" style="font-size:22px;color:#1E1D54;font-weight:bold;padding:3%;">Shares :</label>
-                        <select class="form-control" id="sharename">
-                            {% for obj in shares %}
-                            <option value="{{ obj.id }}">{{ obj.name }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="sel1" style="font-size:22px;color:#1E1D54;font-weight:bold;padding-left:3%;">Quantity
-                            :
-                        </label>
-                        <input type="number" class="form-control" id="sharequantity" placeholder="0">
-                    </div>
-                    <div class="flex-container text-center" id="buttons">
-                        <div> <input type="submit" class="btn btn-sm btn-danger text-center mr-2 ml-5 mb-2" id="buy" value="BUY"></div>
-                        <div> <input type="submit" class="btn btn-sm btn-danger text-center ml-2 mb-2" id="sell" value="SELL"></div>
-                    </div>
+    <div class="container mx-auto">
+        <nav class="container mx-auto py-2 mx-12">
+            <div class="flex flex-row">
+                <a href="/">
+                    <img src="/static/images/wallstreet-01.png" class="h-24 w-24" alt="logo" /></a>
+                <div class="flex flex-row flex-1 gap-8 justify-end my-auto">
+                    {% if user.is_authenticated %}
+                    <a href="/sellbuy/dashboard/"
+                        class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
+                        <button class="my-auto">
+                            <span class="wallstreet_button-1_font" style="color:black">Dashboard</span>
+                        </button>
+                    </a>
+                    <a href="/auth/logout/"
+                        class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
+                        <button class="my-auto">
+                            <span class="wallstreet_button-1_font" style="color:black">Logout</span>
+                        </button>
+                    </a>
+                    {% else %}
+                    <a href="/auth/login/" class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
+                        <button class="my-auto">
+                            <span class="wallstreet_button-1_font" style="color:black">Login</span>
+                        </button>
+                    </a>
+
+                    <a href="/auth/register/"
+                        class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
+                        <button class="my-auto">
+                            <span class="wallstreet_button-1_font" style="color:black">Register</span>
+                        </button>
+                    </a>
+                    {% endif %}
+                    <a class="wallstreet_button-1 py-4 px-8" href="/developers/">
+                        <span class="wallstreet_button-1_font">Developers</span></button>
+                    </a>
                 </div>
             </div>
-            <div class="right">
-                <table class="table table-striped table-sm">
-                    <thead class="text-center">
-                        <tr>
-                            <th scope="col">Share Name</th>
-                            <th scope="col">Current Price</th>
-                            <th scope="col">Previous Price</th>
-                            <th scope="col">Percentage change</th>
-                            <th scope="col">Shares bought</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-center" id="share_table">
-
-                    </tbody>
-                </table>
-                <div id="graph" height="250" width="800">
-                  <h4 style="color:gray;padding-top:150px;padding-left:150px;position:fixed">Click on the shares in the table to display the respective graphs!</h4>
-              </div>
-
-            </div>
-        </div>
+        </nav>
     </div>
+    <!--Content-->
+        <div class="container mx-auto my-4">
+            <div class="grid grid-cols-4 gap-4">
+                <div class="col-span-1">
+                <div class="flex flex-col gap-4 ">
+                    <div class="wallstreet_card p-6">
+                        <p class="wallstreet_subheading">Welcome, <br> <span class="wallstreet_part2_subheading text-black">{{ name }} </span></p>
+                    </div>
+                    <div class="wallstreet_card p-6">
+                        <p class="wallstreet_subheading">Account balance </p>
+                        <p class="wallstreet_part2_subheading text-black text-left" id="money"></p>
+                    </div>
+                    <div class="wallstreet_card p-6">
+                        <p class="wallstreet_subheading">Stocks avaliable</p>
+                        <div class="form-group">
+                            <label for="sel1" class="wallstreet_part2_subheading text-black text-left">Shares
+                                :</label>
+                            <select class="form-control p-2 wallstreet_card_input wallstreet_card_input_font" id="sharename">
+                                {% for obj in shares %}
+                                <option value="{{ obj.id }}" class="wallstreet_card_input_font">{{ obj.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sel1"
+                                class="wallstreet_part2_subheading text-black text-left">Quantity
+                                :
+                            </label>
+                            <input type="number" class="form-control p-2 wallstreet_card_input wallstreet_card_input_font" id="sharequantity" placeholder="0">
+                        </div>
+                        <div class="flex flex-row gap-4" id="buttons">
+                            <div> <button class="wallstreet_button-1 py-2 px-8"><input type="submit" class="wallstreet_button-1_font" style="text-transform: capitalize;" id="buy"
+                                    value="BUY"></button></div>
+                            <div> <button class="wallstreet_button-1 py-2 px-8"><input type="submit" class="wallstreet_button-1_font" style="text-transform: capitalize;" id="sell"
+                                    value="SELL"></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="col-span-3">
+                    <table class="table">
+                        <thead class="wallstreet_subheading text-black text-center">
+                            <tr>
+                                <th scope="col">Share Name</th>
+                                <th scope="col">Current Price</th>
+                                <th scope="col">Previous Price</th>
+                                <th scope="col">Percentage change</th>
+                                <th scope="col">Shares bought</th>
+                            </tr>
+                        </thead>
+                        <tbody class="wallstreet_font_table text-center" id="share_table">
+
+                        </tbody>
+                    </table>
+                    <div id="graph" class="my-4">
+                    </div>
+                </div>
+            </div>
+        </div>
     <script>
         setInterval(function () {
             LoadPrice();
         }, 10000);
-       
-     
+
+
         function Graph(id) {
             $.get('/sellbuy/graph/' + id + '', function (data) {
                 console.log(data);
@@ -136,13 +171,13 @@
                     y: data.share_price,
                     type: 'Scatter',
                     marker: {
-                     color: '#ff8f00',
-                     size: 10,
-                     line: {
-                      color: 'black',
-                      width: 1
-                  }
-                },
+                        color: '#2196F3',
+                        size: 10,
+                        line: {
+                            color: 'black',
+                            width: 1
+                        }
+                    },
                 };
                 var graphData = [trace];
 
@@ -154,23 +189,25 @@
                 Plotly.newPlot('graph', graphData, layout);
 
 
-                
+
 
 
             });
         }
-        
+
         function LoadPrice() {
 
             $.get('/sellbuy/data/', function (data) {
                 console.log(data);
-                
+
                 var tableHTML = "";
                 for (var i = 0; i < data.data.length; i++) {
-                   
+                    if(data.data[i].percentage_share_change > 0)
                     // tableHTML += '<tr><td><a href=' + '\'/sellbuy/graph/' + (data.data[i].share_id) + '\' onclick=\"return popitup(\'/sellbuy/graph/' + (data.data[i].share_id) + '\')\">' + (data.data[i].share) + '</a>' + '</td><td>' + (data.data[i].current_price) + '</td><td>' + (data.data[i].previous_price) + '</td><td>' + (data.data[i].percentage_share_change) + '</td><td>' + (data.data[i].quantity) + '</td></tr>';
-                    tableHTML += '<tr><td onclick=\"Graph(' + (data.data[i].share_id) + ')\"><a href="#">' + (data.data[i].share) + '</a>' + '</td><td> &#8377; ' + (data.data[i].current_price) + '</td><td> &#8377; ' + (data.data[i].previous_price) + '</td><td>' + (data.data[i].percentage_share_change) + ' %</td><td>' + (data.data[i].quantity) + '</td></tr>';
-
+                        tableHTML += '<tr><td onclick=\"Graph(' + (data.data[i].share_id) + ')\"><a href="#">' + (data.data[i].share) + '</a>' + '</td><td> &#8377; ' + (data.data[i].current_price) + '</td><td> &#8377; ' + (data.data[i].previous_price) + '</td><td class="text-green-600">' + ( data.data[i].percentage_share_change + "&uarr;") + ' %</td><td>' + (data.data[i].quantity) + '</td></tr>';
+                    else 
+                        tableHTML += '<tr><td onclick=\"Graph(' + (data.data[i].share_id) + ')\"><a href="#">' + (data.data[i].share) + '</a>' + '</td><td> &#8377; ' + (data.data[i].current_price) + '</td><td> &#8377; ' + (data.data[i].previous_price) + '</td><td class="text-red-600">' + ( data.data[i].percentage_share_change + "&darr;") + ' %</td><td>' + (data.data[i].quantity) + '</td></tr>';
+                       
                 }
                 $("#share_table").html(tableHTML);
 
@@ -241,7 +278,6 @@
                     quantity: quantity,
                     button: button,
                     csrfmiddlewaretoken: csrfmiddlewaretoken
-
                 },
                 success: function (data) {
                     CurrentHolding();

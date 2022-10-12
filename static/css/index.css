@@ -1,3 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+#toast {
+    visibility: hidden;
+}
+
+#toast.show {
+    visibility: show;
+    justify-content: center;
+    align-items: center;
+    background: #ffc3c3;
+    border-radius: 8px;
+    width: 100%;
+    padding: 14px;
+    margin: 1rem 0;
+    text-align: center;
+    font-family: 'Poppins';
+    color: gray;
+    font-weight: 600;
+    visibility: visible;
+    /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
 .wallstreet_subheading {
     font-family: 'Poppins';
     font-style: normal;
@@ -6,6 +35,13 @@
     line-height: 32px;
     color: #2196F3;
 
+}
+.wallstreet_font_table {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
 }
 
 .wallstreet_heading_div {
@@ -131,41 +167,106 @@
     /* Primary/500 */
     color: #2196F3;
 }
+
 .wallstreet_part2_title {
     /* Heading/3 */
     max-width: 579px;
 
-font-family: 'Epilogue';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 64px;
-/* or 160% */
+    font-family: 'Epilogue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 64px;
+    /* or 160% */
 
 
-/* Gray/900 */
+    /* Gray/900 */
 
-color: #1D242A;
+    color: #1D242A;
 }
+
 .wallstreet_part2_paragraph {
     max-width: 512px;
 
-/* Body/M */
+    /* Body/M */
 
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-/* or 150% */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* or 150% */
 
 
-/* Gray/600 */
+    /* Gray/600 */
 
-color: #5C7184;
+    color: #5C7184;
 
 }
 
 .footer_logo {
     max-width: 300px;
+}
+
+.footer_color {
+    background: #F0F3F5;
+}
+
+.wallstreet_card {
+    max-width: 1170px;
+    max-height: 426px;
+    background: #CFE8FC;
+    border-radius: 20px;
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.08));
+}
+
+.wallstreet_card_login_layout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    margin: auto;
+    max-width: 330px;
+}
+
+.wallstreet_card_input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
+    width: 100%;
+    margin: 1rem 0px;
+    background: #FFFFFF;
+    /* Gray/100 */
+
+    border: 1px solid #E1E6EA;
+    border-radius: 8px;
+
+}
+
+.wallstreet_card_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2196F3;
+    border-radius: 8px;
+    width: 100%;
+    padding: 14px;
+}
+
+.wallstreet_card_input_font {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/400 */
+
+    color: #90A2B2;
 }

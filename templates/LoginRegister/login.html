@@ -10,17 +10,25 @@
 	<title>Login | WallStreet '18</title>
 	<script src="/static/js/validation.js"></script>
 	<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/static/css/login.css">
-	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
+	<script src="https://cdn.tailwindcss.com"></script>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
 	<script src="/static/js/jquery.min.js"></script>
 	<script src="/static/js/popper.min.js"></script>
 	<script src="/static/js/bootstrap.min.js"></script>
 	<script src="/static/js/jquery.basic.toast.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="/static/css/login.css">
+	<link rel="stylesheet" href="/static/css/index.css">
+	<script src="/static/js/jquery.basic.toast.js"></script>
+
 </head>
 
-<body style="font-family: 'Roboto', sans-serif;">
+<body>
+	<!-- Validation and Login Script -->
 	<script>
 		function login() {
 			var username = $("#username").val();
@@ -38,11 +46,9 @@
 						window.location.href = '/sellbuy/dashboard/';
 					}
 					else if (data.success == false) {
-						$.Toast(data.message, {
-							'duration': 4000,
-							'position': 'bottom',
-							'z-depth': 99999
-						});
+						var x = document.getElementById("toast");
+						x.className="show";
+						setTimeout(function(){ x.className = x.className.replace("show", ""); }, 4000);
 					}
 				},
 				error: function () {
@@ -51,41 +57,182 @@
 			});
 		}
 	</script>
-	<div id="bg"></div>
 	<div id="loader"></div>
-		<img src="/static/images/logo.png" alt="Logo not available!" id="logows">
-	<div class="card mx-auto container">
-		<div class="display-4 text-center mt-5 mb-3"> WallStreet'18 </div>
-		<br>
-		<p class="text-center"> Sign-in to start your session </p>
-		<div class="form-group mr-2 ml-2 mt-2">
-			<div class="input-group">
-				<span class="input-group-addon">
-					<i class="fa fa-user mr-1 mb-0"></i>
-				</span>
-				<input type="text" class="form-control" id="username" placeholder="Username" required>
+	<div class="container mx-auto">
+		<nav class="container mx-auto py-2 mx-12">
+			<div class="flex flex-row">
+				<a href="/">
+					<img src="/static/images/wallstreet-01.png" class="h-24 w-24" alt="logo" /></a>
+				<div class="flex flex-row flex-1 gap-8 justify-end my-auto">
+					{% if user.is_authenticated %}
+					<a href="/sellbuy/dashboard/"
+						class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
+						<button class="my-auto">
+							<span class="wallstreet_button-1_font" style="color:black">Dashboard</span>
+						</button>
+					</a>
+					<a href="/auth/logout/"
+						class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
+						<button class="my-auto">
+							<span class="wallstreet_button-1_font" style="color:black">Logout</span>
+						</button>
+					</a>
+					{% else %}
+					<a href="/auth/login/"
+						class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
+						<button class="my-auto">
+							<span class="wallstreet_button-1_font" style="color:black">Login</span>
+						</button>
+					</a>
 
+					<a href="/auth/register/"
+						class="font-poppins color-text text-sm tracking-morewider px-4 py-2 my-auto">
+						<button class="my-auto">
+							<span class="wallstreet_button-1_font" style="color:black">Register</span>
+						</button>
+					</a>
+					{% endif %}
+					<a class="wallstreet_button-1 py-4 px-8" href="/developers/">
+						<span class="wallstreet_button-1_font">Developers</span></button>
+					</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div class="container mx-auto my-24">
+		
+		<div class="wallstreet_card mx-auto p-16">
+			<div class="grid grid-cols-2">
+				<div>
+					<div class="flex flex-col gap-4">
+						<div class="wallstreet_part2_subtitle">LOGIN</div>
+						<p class="wallstreet_part2_title"> Sign-in to start your session </p>
+						<p class="wallstreet_part2_paragraph">Deep dive into the world of stock market by playing WallStreet'22.</p>
+					</div>
+
+				</div>
+				<div class="wallstreet_card_login_layout">
+					<div>
+						<div class="form-group wallstreet_card_input">
+							<div class="input-group flex flex-row">
+								<span class="input-group-addon my-auto mr-2">
+									<img src="/static/images/sms.png">
+								</span>
+								<input type="text" class="wallstreet_card_input_font form-control" id="username"
+									placeholder="Username" required>
+							</div>
+						</div>
+						<div class="form-group wallstreet_card_input">
+							<div class="input-group flex flex-row">
+								<span class="input-group-addon my-auto mr-2">
+									<img src="/static/images/key.png">
+								</span>
+								<input type="password" class="wallstreet_card_input_font form-control has-feedback"
+									id="password" placeholder="Password" required>
+							</div>
+						</div>
+					</div>
+					<div id="toast">Invalid Credentials</div>
+
+					<button class="wallstreet_card_button" id="login" onclick="login()"><span
+							class="wallstreet_button-1_font">Sign in</span></button>
+					<div class="m-2" id="signup"> <span class="wallstreet_card_input_font">Don't have an account? <a
+								class="mx-2 font-semibold" href="/auth/register/"> Sign up </a></span>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<div class="form-group mr-2 ml-2 mt-4">
-			<div class="input-group">
-				<span class="input-group-addon">
-					<i class="fa fa-lock mr-1 mb-0"></i>
-				</span>
-				<input type="password" class="form-control has-feedback" id="password" placeholder="Enter password" required>
+	</div>
+	<!-- <footer>
+		<div class="bg-gray-100 py-12 px-12">
+			<div class="container mx-auto px-12">
+				<div class="grid grid-cols-3">
+					<div class="my-auto">
+						<img class="footer_logo" src="/static/images/ecelllogo1.png" />
+					</div>
+					<div class="mx-auto">
+						<div class="flex flex-col mx-auto">
+							<p class="text-lg font-poppins">Sitemap</p>
+							<p class="
+				text-sm
+				leading-loose
+				font-medium
+				tracking-wide
+			
+				font-poppins 
+			  ">
+								Home
+							</p>
+							<p class="
+				text-sm
+				leading-loose
+				font-medium
+				tracking-wide
+			
+				font-poppins 
+			  ">
+								Visit
+							</p>
+							<p class="
+				text-sm
+				leading-loose
+				font-medium
+				tracking-wide
+			
+				font-poppins 
+			  ">
+								Exhibitions
+							</p>
+							<p class="
+				text-sm
+				leading-loose
+				font-medium
+				tracking-wide
+			
+				font-poppins 
+			  ">
+								Programs & Events
+							</p>
+							<p class="
+				text-sm
+				leading-loose
+				font-medium
+				tracking-wide
+			
+				font-poppins 
+			  ">
+								Store
+							</p>
+							<p class="
+				text-sm
+				leading-loose
+				font-medium
+				tracking-wide
+			
+				font-poppins 
+			  ">
+								Membership
+							</p>
+						</div>
+					</div>
+					<div class="mx-auto">
+						<div class="flex flex-col mx-auto">
+							<p class="text-lg font-poppins">Connect</p>
+							<p class="text-sm font-gray">test</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<br>
 
-
-		<button class="btn btn-primary btn-sm text-center" id="login" onclick="login()">SIGN IN </button>
-		<br>
-		<div class="text-center" id="signup"> Don't have an account? <a href="/auth/register/"> Sign up </a></div>
+		<div class="bg-gray-100 mx-auto">
+			<p class=" font-poppins text-sm py-8 font-bold text-center">
+				© 2022 E-Cell NIT Raipur . All rights reserved.
+			</p>
 		</div>
-		<br>
-		<br>
-		<script src="/static/js/loader.js"></script>
+	</footer> -->
+	<script src="/static/js/loader.js"></script>
 </body>
 
 </html>
